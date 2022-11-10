@@ -1,0 +1,53 @@
+1)ERROR修正
+-->
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/threading.py", line 1009, in _bootstrap_inner
+    self.run()
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/threading.py", line 946, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(display_num_errors=True)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/core/management/base.py", line 487, in check
+    all_issues = checks.run_checks(
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/core/checks/registry.py", line 88, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/core/checks/urls.py", line 14, in check_url_config
+    return check_resolver(resolver)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/core/checks/urls.py", line 24, in check_resolver
+    return check_method()
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/urls/resolvers.py", line 480, in check
+    for pattern in self.url_patterns:
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/utils/functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/urls/resolvers.py", line 696, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/utils/functional.py", line 49, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/site-packages/django/urls/resolvers.py", line 689, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/Users/urara/opt/anaconda3/envs/com.azure-plus/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/urara/MYPORTFOLIO/202212AP/memo/memo/urls.py", line 18, in <module>
+    import memo.views as memo
+ModuleNotFoundError: No module named 'memo.views'
+-->クリア
+
+2)文言修正
+-->
+            <th>id</th>
+            <th>name</th>　担当者
+            <th>age</th>　--><th>company</th> 会社名
+            <th>mail</th>
+            <th>birthday</th> --><th>visitday</th> 訪問日
+
+            Friend --> costmer
+            

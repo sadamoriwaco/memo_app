@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'memo_app/css/style.css' %}"/>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>{{ message|safe }}</p>
+    <table>
+        <form action="{% url 'find' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <tr><td></td><td><input type="submit" value="click"></td></tr>
+        </form>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>会社名</th>
+            <th>担当者</th>
+            <th>mail</th>
+            <th>訪問日</th>
+            <th>備考</th>
+        </tr>
+{% for item in data %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.company }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.mail }}</td>
+            <td>{{ item.visitday }}</td>
+        </tr>
+{% endfor %}
+    </table>
+</body>
+</html>
